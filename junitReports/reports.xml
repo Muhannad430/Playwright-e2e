@@ -1,0 +1,46 @@
+<testsuites id="" name="" tests="5" failures="1" skipped="0" errors="0" time="16.514071">
+<testsuite name="project.spec.ts" timestamp="2025-06-03T20:13:57.046Z" hostname="chromium" tests="5" failures="1" skipped="0" time="13.228" errors="0">
+<testcase name="Validate toDo list page › Todo-App Modal Verification" classname="project.spec.ts" time="1.448">
+</testcase>
+<testcase name="Validate toDo list page › Single Task Addition and Removal" classname="project.spec.ts" time="6.544">
+<failure message="project.spec.ts:39:9 Single Task Addition and Removal" type="FAILURE">
+<![CDATA[  [chromium] › project.spec.ts:39:9 › Validate toDo list page › Single Task Addition and Removal ───
+
+    Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+
+    Locator: locator('[data-icon="circle-check"]')
+    Expected string: "Task 01"
+    Received string: ""
+    Call log:
+      - expect.toHaveText with timeout 5000ms
+      - waiting for locator('[data-icon="circle-check"]')
+        9 × locator resolved to <svg role="img" focusable="false" data-prefix="fas" aria-hidden="true" viewBox="0 0 512 512" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" class="svg-inline--fa fa-circle-check ">…</svg>
+          - unexpected value ""
+
+
+      44 |         await expect(todoListPage.tasksList()).toHaveCount(1)
+      45 |
+    > 46 |         await expect(todoListPage.completeTaskCheck()).toHaveText('Task 01')
+         |                                                        ^
+      47 |
+      48 |         await todoListPage.completeTaskCheck().click()
+      49 |         await todoListPage.deleteButton().click()
+        at /Users/muhannadabusharbak/Desktop/playwright-e2e/tests/project.spec.ts:46:56
+
+    Error Context: ../test-results/project-Validate-toDo-list-3a999-e-Task-Addition-and-Removal-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/project-Validate-toDo-list-3a999-e-Task-Addition-and-Removal-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Validate toDo list page › Multiple Task Operations" classname="project.spec.ts" time="1.998">
+</testcase>
+<testcase name="Validate toDo list page › Search and Filter Functionality in todo App" classname="project.spec.ts" time="1.759">
+</testcase>
+<testcase name="Validate toDo list page › Task Validation and Error Handling" classname="project.spec.ts" time="1.479">
+</testcase>
+</testsuite>
+</testsuites>
