@@ -10,7 +10,7 @@ test.describe('', () => {
         page.click('#fdgdgf', { timeout: 10000 });
     });
 
-    test.only('CSS/Xpath selectors', async ({ page }) => {
+    test.skip('CSS/Xpath selectors', async ({ page }) => {
 
         page.locator(''); // you can pass any CSS/Xpath 
     });

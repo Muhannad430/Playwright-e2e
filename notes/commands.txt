@@ -19,3 +19,7 @@ npx playwright test
 We suggest that you begin by typing:
 
     npx playwright test
+
+
+codegen command:
+    npx playwright codegen

@@ -10,7 +10,7 @@ test.describe('Playwright actions', () => {
     Click on "Click on me" button
     Validate "You clicked on a button!" text is visible
     */
-    test.only('Validate "You clicked on a button!" text is visible', async ({ page }) => {
+    test('Validate "You clicked on a button!" text is visible', async ({ page }) => {
 
         await page.locator('#click').click()
         expect(page.locator('#click_result')).toHaveText('You clicked on a button!')

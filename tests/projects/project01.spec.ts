@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ToDoListPage } from '../pages/ToDoListPage';
+import { ToDoListPage } from '../../pages/ToDoListPage';
 
 test.describe('Validate toDo list page', () => {
     let todoListPage: ToDoListPage
