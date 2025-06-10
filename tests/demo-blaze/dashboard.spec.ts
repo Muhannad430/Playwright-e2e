@@ -3,10 +3,6 @@ import { test, expect } from "@playwright/test";
 test.describe("Demo Blaze Dashboard test", () => {
     test.beforeEach(async ({ page }) => {
         await page.goto("/");
-        await page.getByRole("link", { name: "Log in" }).click();
-        await page.locator("#loginusername").fill("test");
-        await page.locator("#loginpassword").fill("test");
-        await page.getByRole("button", { name: "Log in" }).click();
     });
 
     test("Header Snapshot", async ({ page }) => {
@@ -43,4 +39,29 @@ test.describe("Demo Blaze Dashboard test", () => {
       `);
     });
 
+    test("Category Menu Snapshot", async ({ page }) => {
+        await expect(page.locator("#contcont")).toMatchAriaSnapshot(`
+      - link "CATEGORIES":
+        - /url: ""
+      - link "Phones":
+        - /url: "#"
+      - link "Laptops":
+        - /url: "#"
+      - link "Monitors":
+        - /url: "#"
+      `);
+    });
+
+    test("Footer Snapshot", async ({ page }) => {
+        await expect(page.locator("#footc")).toMatchAriaSnapshot(`
+      - heading "About Us" [level=4]
+      - paragraph: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+      - heading "Get in Touch" [level=4]
+      - paragraph: "/Address: \\\\d+ El Camino Real/"
+      - paragraph: "/Phone: \\\\+\\\\d+ \\\\d+/"
+      - paragraph: "Email: demo@blazemeter.com"
+      - heading "PRODUCT STORE" [level=4]:
+        - img
+      `);
+    });
 });

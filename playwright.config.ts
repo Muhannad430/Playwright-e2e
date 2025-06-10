@@ -13,6 +13,8 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
  */
 
 export default defineConfig({
+  globalSetup: './tests/global-setup/global-setup',
+  globalTeardown: './tests/global-setup/global-teardown',
   testDir: './tests',
   timeout: 30 * 1000,
   /* Run tests in files in parallel */
@@ -46,28 +48,54 @@ export default defineConfig({
 
   projects: [
     {
-      name: 'Basics',
-      testDir: './tests/basics',
+      name: 'Projects',
+      testDir: './tests/projects',
       use: {
         ...devices['Desktop Chrome'],
-        // baseURL: "https://www.techglobal-training.com/",
+        // baseURL: "https://www.techglobal-training.com",
         headless: true
       },
     },
     {
-      name: 'Demo Blaze',
+      name: 'Basics',
+      testDir: './tests/basics',
+      use: {
+        ...devices['Desktop Chrome'],
+        // baseURL: "https://www.techglobal-training.com",
+        headless: false
+      },
+    },
+    {
+      name: 'Demo Blaze Chrome',
       testDir: './tests/demo-blaze',
+      dependencies: ['Demo Blaze Set up'],
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: "https://demoblaze.com/index.html#",
+        headless: false,
+        storageState: './tests/auth/demo-blaze.json'
+      },
+    },
+    {
+      name: 'Demo Blaze Safari',
+      testDir: './tests/demo-blaze',
+      dependencies: ['Demo Blaze Set up'],
+      use: {
+        ...devices['Desktop Safari'],
+        baseURL: "https://demoblaze.com/index.html#",
+        headless: false,
+        storageState: './tests/auth/demo-blaze.json'
+      },
+    },
+    {
+      name: 'Demo Blaze Set up',
+      testDir: './tests/demo-blaze-setup',
       use: {
         ...devices['Desktop Chrome'],
         baseURL: "https://demoblaze.com/index.html#",
         headless: false
       },
-    },
-
-
-
-
-
+    }
 
     // {
     //   name: 'firefox',

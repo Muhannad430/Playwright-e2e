@@ -1,6 +1,14 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.916041">
-<testsuite name="demo-blaze/login-test.spec.ts" timestamp="2025-06-08T16:20:12.536Z" hostname="Demo Blaze" tests="1" failures="0" skipped="0" time="3.617" errors="0">
-<testcase name="Login" classname="demo-blaze/login-test.spec.ts" time="3.617">
+<testsuites id="" name="" tests="5" failures="0" skipped="0" errors="0" time="12.108654999999999">
+<testsuite name="projects/project02.spec.ts" timestamp="2025-06-10T20:34:18.448Z" hostname="Projects" tests="5" failures="0" skipped="0" time="4.214" errors="0">
+<testcase name="Validate Shopping-Cart page › Available Courses Section Validation" classname="projects/project02.spec.ts" time="0.855">
+</testcase>
+<testcase name="Validate Shopping-Cart page › Cart Section Validation" classname="projects/project02.spec.ts" time="0.641">
+</testcase>
+<testcase name="Validate Shopping-Cart page › Add a Course to the Cart and Validate" classname="projects/project02.spec.ts" time="0.943">
+</testcase>
+<testcase name="Validate Shopping-Cart page › Add Two Courses to the Cart and Validate" classname="projects/project02.spec.ts" time="0.891">
+</testcase>
+<testcase name="Validate Shopping-Cart page › Add All Three Courses to the Cart and Validate" classname="projects/project02.spec.ts" time="0.884">
 </testcase>
 </testsuite>
 </testsuites>
